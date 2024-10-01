@@ -1,4 +1,5 @@
 export interface Company {
+  id: string;
   name: string;
   tickerSymbol: string;
   exchangeSymbol: string;
@@ -8,4 +9,24 @@ export interface Company {
   listingCurrencyISO: string;
   exchangeCountryISO: string;
   securityName: string;
+  prices?: CompanyPriceClose[];
+  score?: CompanyScore;
+}
+
+export interface CompanyPriceClose {
+  date: Date;
+  price: number;
+}
+
+export interface CompanyScore {
+  dateGenerated: string;
+  dividend: number;
+  future: number;
+  health: number;
+  management: number;
+  past: number;
+  value: number;
+  misc: number;
+  total: number;
+  sentence: string;
 }
